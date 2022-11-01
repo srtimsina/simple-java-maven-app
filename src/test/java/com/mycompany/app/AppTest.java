@@ -30,6 +30,14 @@ public class AppTest
     }
 
     @Test
+    public void testAppConstructorTest() {
+        try {
+            new App();
+        } catch (Exception e) {
+            fail("Construction failed1.");
+        }
+    }
+    @Test
     public void testAppMain()
     {
         App.main(null);
