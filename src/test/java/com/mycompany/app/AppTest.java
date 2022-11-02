@@ -49,7 +49,7 @@ public class AppTest
     }
 
     @Test
-    public void testAppConstructorTest1() {
+    public void testAppConstructorTest2() {
         try {
             new App();
         } catch (Exception e) {
