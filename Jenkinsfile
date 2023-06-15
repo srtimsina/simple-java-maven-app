@@ -12,6 +12,13 @@ pipeline {
                 echo "Building the code"
                 sh 'pwd'
                 sh 'mvn -f pom.xml clean install'
+
+                post {
+                success {
+                    echo "Now Archiving the Artifacts...."
+                    archiveArtifacts artifacts: '**/*.jar'
+                }
+            }
             }
         }
         stage('DeployStaging') {
