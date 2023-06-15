@@ -7,18 +7,15 @@ pipeline {
                 echo "Running Unitest"
             }
         }
-        stage('Build') {
+       stage('Build Application') {
             steps {
-                echo "Building the code"
-                sh 'pwd'
                 sh 'mvn -f pom.xml clean install'
-
-                post {
+            }
+            post {
                 success {
                     echo "Now Archiving the Artifacts...."
                     archiveArtifacts artifacts: '**/*.jar'
                 }
-            }
             }
         }
         stage('DeployStaging') {
